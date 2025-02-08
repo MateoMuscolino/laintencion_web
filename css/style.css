@@ -16,7 +16,7 @@ html {
 }
 
 body{
-    background: #FFF8DC ;
+    background: var(--background-color) ;
     color: #fff;
 }
 
@@ -31,7 +31,7 @@ body{
 }
 
 .container i{
-    color: #000000;
+    color: var(--primary-color);
     margin-top: 30px;
 }
 
@@ -69,7 +69,7 @@ nav ul li a::after{
     content: '';
     width: 0;
     height: 3px;
-    background: #FFC107;
+    background: var(--secondary-color);
     position: absolute;
     left: 0;
     bottom: -6px;
