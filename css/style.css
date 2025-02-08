@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #000000;
+}
+:root {
+    --primary-color: #000000;
+    --secondary-color: #FFC107;
+    --background-color: #FFF8DC;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    background: #FFF8DC ;
+    color: #fff;
+}
+
+#header{
+    width: 100%;
+    height: 100vh;
+    /*background-image: url(); if i want to add a background image */
+}
+
+.container{
+    padding: 10px 10%;
+}
+
+.container i{
+    color: #000000;
+    margin-top: 30px;
+}
+
+nav{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo{
+    width: 180px;
+    height: 90px;
+    border-radius: 10px;
+}
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #FFC107;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after{
+    width: 100%;
+}
+
+.header-text{
+    margin-top: 10%;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.header-text .text-content {
+    flex: 1;
+}
+
+.header-text h1{
+    font-size: 60px;
+    margin-top: 20px;
+}
+
+.header-text .image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-text img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .header-text h1 {
+    font-size: 40px;
+    }
+    .header-text p {
+    font-size: 24px;
+    }
+}
