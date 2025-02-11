@@ -1,15 +1,15 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const menuBtn = document.querySelector('.nav-menu-btn');
-    const navMenu = document.querySelector('nav ul');
+document.addEventListener('DOMContentLoaded', function() { // It ensures that the JavaScript doesn't run until the HTML document is fully loaded
+    const menuBtn = document.querySelector('.nav-menu-btn'); // hamburger menu button
+    const navMenu = document.querySelector('nav ul'); // `<ul>` containing our navigation links
 
     menuBtn.addEventListener('click', () => {
-        menuBtn.classList.toggle('active');
-        navMenu.classList.toggle('active');
+        menuBtn.classList.toggle('active'); // triggers the CSS that changes the hamburger icon to an 'X'
+        navMenu.classList.toggle('active'); // toggles the 'active' class on the navigation menu
     });
 
     // Close menu when clicking a link
     document.querySelectorAll('nav ul li a').forEach(link => {
-        link.addEventListener('click', () => {
+        link.addEventListener('click', () => { // adds click event listeners to all navigation links
             menuBtn.classList.remove('active');
             navMenu.classList.remove('active');
         });
@@ -17,9 +17,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {
-        if (!e.target.closest('nav')) {
+        if (!e.target.closest('nav')) { // It checks if the click was outside the navigation
             menuBtn.classList.remove('active');
-            navMenu.classList.remove('active');
+            navMenu.classList.remove('active'); // allows users to close the menu by clicking anywhere outside of it
         }
     });
 });
