@@ -304,7 +304,7 @@ nav ul li a:hover::after{
 }
 
 /* Add hamburger menu for mobile */
-.nav-menu-btn {
+.nav-menu-btn { /* creates a hidden button for the mobile menu. It's initially not displayed and has no background or border */
     display: none;
     cursor: pointer;
     background: none;
@@ -312,7 +312,7 @@ nav ul li a:hover::after{
     padding: 0.5rem;
 }
 
-.nav-menu-btn span {
+.nav-menu-btn span { /* This creates the three lines of the hamburger icon. Each `span` is a line, 25px wide, 2px high, with the primary color, and spaced 5px apart. The transition property allows for smooth animations. */
     display: block;
     width: 25px;
     height: 2px;
@@ -322,7 +322,7 @@ nav ul li a:hover::after{
 }
 
 /* Update navigation styles */
-nav {
+nav { /* This allows absolute positioning of child elements relative to the nav */
     margin-top: 30px;
     display: flex;
     align-items: center;
@@ -342,7 +342,7 @@ nav {
         z-index: 999;
     }
 
-    nav ul {
+    nav ul { /*creates a slide-out menu for mobile. It's initially off-screen (right: -100%), covers 80% of the screen width, and has a smooth transition*/
         position: fixed;
         top: 0;
         right: -100%;
@@ -354,7 +354,7 @@ nav {
         box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
     }
 
-    nav ul.active {
+    nav ul.active { /*This class brings the menu on-screen when activated*/
         right: 0;
     }
 
@@ -365,15 +365,15 @@ nav {
 
     /* Hamburger menu animation */
     .nav-menu-btn.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
+        transform: rotate(45deg) translate(5px, 5px);         /*These transform the hamburger icon into an X when the menu is active*/
     }
 
-    .nav-menu-btn.active span:nth-child(2) {
+    .nav-menu-btn.active span:nth-child(2) {               /*These transform the hamburger icon into an X when the menu is active*/
         opacity: 0;
     }
 
     .nav-menu-btn.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
+        transform: rotate(-45deg) translate(5px, -5px);    /*These transform the hamburger icon into an X when the menu is active*/
     }
 
     /* Header text adjustments */
