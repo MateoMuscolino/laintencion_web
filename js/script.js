@@ -1,3 +1,21 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const track = document.querySelector('.slider-track');
+    const slides = Array.from(track.children);
+    let currentIndex = 0;
+
+    function updateSlidePosition() {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    function moveToNextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSlidePosition();
+    }
+
+    // Automatic slide change
+    setInterval(moveToNextSlide, 5000); // Change slide every 5 seconds
+});
+
 document.addEventListener('DOMContentLoaded', function() { // It ensures that the JavaScript doesn't run until the HTML document is fully loaded
     const menuBtn = document.querySelector('.nav-menu-btn'); // hamburger menu button
     const navMenu = document.querySelector('nav ul'); // `<ul>` containing our navigation links
@@ -23,3 +41,4 @@ document.addEventListener('DOMContentLoaded', function() { // It ensures that th
         }
     });
 });
+
