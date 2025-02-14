@@ -214,8 +214,10 @@ nav ul li a:hover::after{
 }
 
 #sobre-nosotros h2{
-    display: flex;
-    gap: 40px;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    text-align: center;
+    color: var(--third-color);
 }
 
 .about-content {
@@ -239,7 +241,7 @@ nav ul li a:hover::after{
 
 .about-highlights{
     list-style-type: none;
-    margin-top: 20px;
+    padding-left: 0;
 }
 
 .about-highlights li {
@@ -258,7 +260,9 @@ nav ul li a:hover::after{
 }
 
 .about-images-slider {
-    width: 100%;
+    position: relative;
+    max-width: 600px;
+    margin: 40px auto 0;
     overflow: hidden;
 }
 
@@ -269,11 +273,12 @@ nav ul li a:hover::after{
 
 .slider-track {
     display: flex;
-    transition: transform 0.5s ease;
+    transition: transform 0.5s ease-in-out;
 }
 
 .slide {
     flex: 0 0 100%;
+    width: 100%;
 }
 
 .slide img {
@@ -281,7 +286,9 @@ nav ul li a:hover::after{
     height: auto;
     object-fit: cover;
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
+
 
 
 /*------------------------------------ Responsive Section -------------------------------------*/
