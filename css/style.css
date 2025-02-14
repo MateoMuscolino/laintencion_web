@@ -34,8 +34,7 @@ body{
 
 .container i{
     color: var(--primary-color);
-    margin-top: 0;
-    font-size: 1.5rem;
+    margin-top: 30px;
 }
 
 nav{
@@ -118,258 +117,113 @@ nav ul li a:hover::after{
 
 /*------------------------------------ Responsive Section -------------------------------------*/
 
-@media (max-width: 768px) {
-    nav {
-        padding: 15px 0;
-    }
-
-    .nav-menu-btn {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    /* Hamburger menu animation */
-    .nav-menu-btn.active span:nth-child(1) {
-        transform: rotate(45deg) translate(6px, 6px);
-    }
-
-    .nav-menu-btn.active span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .nav-menu-btn.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(6px, -6px);
-    }
-
-    nav ul {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 80%;
-        height: 100vh;
-        background: var(--background-color);
-        padding-top: 60px;
-        transition: 0.3s;
-        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-    }
-
-    nav ul.active {
-        right: 0;
-    }
-
-    nav ul li {
-        display: block;
-        margin: 25px;
-        text-align: center;
+/* Adjust responsive design for larger screens */
+@media (min-width: 1200px) {
+    .header-text img {
+        max-width: 800px; /* Even larger on big screens */
     }
 }
 
-/* Extra small devices */
-@media (max-width: 480px) {
-    .container {
-        padding: 0 15px; /* Reduce container padding on very small screens */
+/* Existing media query for smaller screens */
+@media (max-width: 768px) {
+    .header-text {
+        flex-direction: column;
+        text-align: center;
     }
-
-    nav {
-        padding: 12px 0;
+    .header-text .image-container {
+        margin-top: 2rem;
     }
-
-    .container i {
-        font-size: 1.25rem; /* Slightly smaller icon on very small screens */
+    .header-text img {
+        max-width: 100%; /* Full width on small screens */
     }
 }
 
 /*------------------------------------ Sobre Nosotros section -------------------------------------*/
 
-#sobre-nosotros{
+/* About Us Styles */
+#sobre-nosotros {
     padding: 80px 0;
 }
 
 #sobre-nosotros .container {
-    max-width: 1400px; /* Or any width you prefer */
-    width: 90%; /* This ensures some margin on very wide screens */
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-#sobre-nosotros h2{
-    display: flex;
-    gap: 40px;
+#sobre-nosotros h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: var(--third-color);
 }
 
 .about-content {
     display: flex;
-    flex-direction: column;
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto; 
+    gap: 50px;
+    align-items: flex-start;
 }
 
-.about-text{
+.about-text {
     flex: 1;
+    max-width: 600px;
 }
 
-.about-text p{
+.about-text p {
     margin-bottom: 20px;
     font-size: 1.1rem;
     line-height: 1.6;
     color: var(--primary-color);
 }
 
-.about-highlights{
+.about-highlights {
     list-style-type: none;
-    margin-top: 20px;
+    padding-left: 0;
+    margin-top: 30px;
 }
 
 .about-highlights li {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     padding-left: 30px;
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
-.about-highlights li::before{
-    content: "\f0e7";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
+.about-highlights li::before {
+    content: "⚡";
     position: absolute;
     left: 0;
     color: var(--third-color);
 }
 
 .about-images-slider {
-    width: 100%;
-    overflow: hidden;
+    flex: 1;
+    max-width: 500px;
 }
 
 .slider-container {
     width: 100%;
     overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .slider-track {
     display: flex;
-    transition: transform 0.5s ease;
+    transition: transform 0.5s ease-in-out;
 }
 
 .slide {
     flex: 0 0 100%;
+    width: 100%;
 }
 
 .slide img {
     width: 100%;
-    height: auto;
+    height: 400px;
     object-fit: cover;
-    border-radius: 10px;
 }
 
-
-/*------------------------------------ Responsive Section -------------------------------------*/
-
-@media (max-width: 768px) {
-    .about-images-slider {
-        max-width: 100%;
-    }
-}
-
-/*------------------------------------ Productos -------------------------------------*/
-
-#productos{
-    padding: 80px 0;
-}
-
-#productos .sub-title{
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 50px;
-    color: var(--third-color);
-}
-
-.productos-list{
-    display: flex;
-    justify-content: center; /* Center the products horizontally */
-    flex-wrap: wrap;
-    gap: 60px;
-    max-width: 1200px; /* Maximum width of the container */
-    margin: 0 auto; /* Center the container */
-}
-
-.producto{
-    flex: 0 1 300px;
-    min-width: 300px; 
-    max-width: 300px; 
-    border-radius: 30px;
-    background: #F5E1A4;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-}
-
-.producto:hover{
-    transform: translateY(-10px);
-}
-
-.producto img{
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
-
-.producto h3{
-    font-size: 1.5rem;
-    margin: 20px 0;
-    margin-bottom: 10px;
-    color: var(--secondary-color)
-}
-
-.producto p{
-    font-size: 1rem;
-    color: var(--primary-color);
-}
-
-/* Adjust for smaller screens */
-@media (max-width: 768px) {
-    .producto {
-        flex-basis: 100%;
-        max-width: 100%; /* Allow full width on mobile */
-    }
-
-    .producto img {
-        height: 250px; /* Slightly taller images on mobile */
-    }
-}
-
-/* Add hamburger menu for mobile */
-.nav-menu-btn { /* creates a hidden button for the mobile menu. It's initially not displayed and has no background or border */
-    display: none;
-    cursor: pointer;
-    background: none;
-    border: none;
-    padding: 0.5rem;
-}
-
-.nav-menu-btn span { /* This creates the three lines of the hamburger icon. Each `span` is a line, 25px wide, 2px high, with the primary color, and spaced 5px apart. The transition property allows for smooth animations. */
-    display: block;
-    width: 25px;
-    height: 2px;
-    background: var(--primary-color);
-    margin: 5px 0;
-    transition: 0.3s;
-}
-
-/* Update navigation styles */
-nav { /* This allows absolute positioning of child elements relative to the nav */
-    margin-top: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    position: relative;
-}
-
-/* Responsive adjustments */
+/* Responsive styles */
 @media (max-width: 768px) {
     .container {
         padding: 10px 5%; /* Reduce padding on mobile */
@@ -471,6 +325,103 @@ nav { /* This allows absolute positioning of child elements relative to the nav 
     .producto {
         min-width: 100%;
     }
+}
+
+/*------------------------------------ Productos -------------------------------------*/
+
+#productos{
+    padding: 80px 0;
+}
+
+#productos .sub-title{
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: var(--third-color);
+}
+
+.productos-list{
+    display: flex;
+    justify-content: center; /* Center the products horizontally */
+    flex-wrap: wrap;
+    gap: 60px;
+    max-width: 1200px; /* Maximum width of the container */
+    margin: 0 auto; /* Center the container */
+}
+
+.producto{
+    flex: 0 1 300px;
+    min-width: 300px; 
+    max-width: 300px; 
+    border-radius: 30px;
+    background: #F5E1A4;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.producto:hover{
+    transform: translateY(-10px);
+}
+
+.producto img{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.producto h3{
+    font-size: 1.5rem;
+    margin: 20px 0;
+    margin-bottom: 10px;
+    color: var(--secondary-color)
+}
+
+.producto p{
+    font-size: 1rem;
+    color: var(--primary-color);
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+    .producto {
+        flex-basis: 100%;
+        max-width: 100%; /* Allow full width on mobile */
+    }
+
+    .producto img {
+        height: 250px; /* Slightly taller images on mobile */
+    }
+}
+
+/* Add hamburger menu for mobile */
+.nav-menu-btn { /* creates a hidden button for the mobile menu. It's initially not displayed and has no background or border */
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+}
+
+.nav-menu-btn span { /* This creates the three lines of the hamburger icon. Each `span` is a line, 25px wide, 2px high, with the primary color, and spaced 5px apart. The transition property allows for smooth animations. */
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: var(--primary-color);
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+/* Update navigation styles */
+nav { /* This allows absolute positioning of child elements relative to the nav */
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
 }
 
 /*------------------------------------ Bibliografia -------------------------------------*/
