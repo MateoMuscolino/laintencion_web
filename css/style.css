@@ -150,9 +150,9 @@ nav ul li a:hover::after{
 }
 
 #sobre-nosotros .container {
-    max-width: 1400px; /* Or any width you prefer */
-    width: 90%; /* This ensures some margin on very wide screens */
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 #sobre-nosotros h2{
@@ -164,10 +164,8 @@ nav ul li a:hover::after{
 
 .about-content {
     display: flex;
-    flex-direction: column;
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto; 
+    gap: 50px;
+    align-items: flex-start;
 }
 
 .about-text{
@@ -184,12 +182,15 @@ nav ul li a:hover::after{
 .about-highlights{
     list-style-type: none;
     padding-left: 0;
+    margin-top: 30px;
 }
 
 .about-highlights li {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     padding-left: 30px;
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .about-highlights li::before{
@@ -202,15 +203,15 @@ nav ul li a:hover::after{
 }
 
 .about-images-slider {
-    position: relative;
-    max-width: 600px;
-    margin: 40px auto 0;
-    overflow: hidden;
+    flex: 1;
+    max-width: 500px;
 }
 
 .slider-container {
     width: 100%;
     overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .slider-track {
@@ -225,10 +226,8 @@ nav ul li a:hover::after{
 
 .slide img {
     width: 100%;
-    height: auto;
+    height: 400px;
     object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 /*------------------------------------ Productos -------------------------------------*/
@@ -350,7 +349,7 @@ nav ul li a:hover::after{
     font-size: 14px;
 }
 
-/* Responsive styles */
+/* --------------------------------------Responsive styles------------------------------------- */
 @media (max-width: 768px) {
     .container {
         padding: 10px 5%;
@@ -425,10 +424,24 @@ nav ul li a:hover::after{
         font-size: 24px;
     }
 
-    .about-content,
+    .about-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
     .productos-list,
     .libros-lista {
         gap: 30px;
+    }
+
+    .about-text,
+    .about-images-slider {
+        max-width: 100%;
+    }
+
+    #sobre-nosotros h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
     }
 
     .about-text p,
@@ -441,6 +454,10 @@ nav ul li a:hover::after{
     #bibliografia .sub-title {
         font-size: 2rem;
         margin-bottom: 30px;
+    }
+
+    .slide img {
+        height: 300px;
     }
 
     .producto {
@@ -507,5 +524,17 @@ nav ul li a:hover::after{
 
     .producto {
         min-width: 100%;
+    }
+
+    #sobre-nosotros {
+        padding: 60px 0;
+    }
+
+    .about-text p {
+        font-size: 1rem;
+    }
+
+    .slide img {
+        height: 250px;
     }
 }
