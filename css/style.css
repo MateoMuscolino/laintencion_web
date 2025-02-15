@@ -2,8 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    color: #000000;
 }
 
 :root {
@@ -18,8 +16,10 @@ html {
 }
 
 body{
-    background: var(--background-color) ;
-    color: #fff;
+    background: var(--background-color);
+    color: var(--primary-color);
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
 }
 
 #header{
@@ -30,6 +30,8 @@ body{
 
 .container{
     padding: 10px 10%;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 .container i{
@@ -44,6 +46,7 @@ nav{
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    position: relative;
 }
 
 nav ul {
@@ -66,6 +69,7 @@ nav ul li a{
     font-size: 18px;
     position: relative;
     color: var(--primary-color);
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
@@ -80,7 +84,7 @@ nav ul li a::after{
     position: absolute;
     left: 0;
     bottom: -6px;
-    transition: 0.8s;
+    transition: width 0.8s;
 }
 
 nav ul li a:hover::after{
@@ -126,6 +130,8 @@ nav ul li a:hover::after{
     background: none;
     border: none;
     padding: 10px;
+    position: relative;
+    z-index: 1000;
 }
 
 .nav-menu-btn span {
@@ -134,71 +140,7 @@ nav ul li a:hover::after{
     height: 2px;
     background-color: var(--primary-color);
     margin: 5px 0;
-    transition: 0.3s;
-}
-/*------------------------------------ Responsive Section -------------------------------------*/
-
-@media (max-width: 768px) {
-    nav {
-        padding: 15px 0;
-    }
-
-    .nav-menu-btn {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    /* Hamburger menu animation */
-    .nav-menu-btn.active span:nth-child(1) {
-        transform: rotate(45deg) translate(6px, 6px);
-    }
-
-    .nav-menu-btn.active span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .nav-menu-btn.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(6px, -6px);
-    }
-
-    nav ul {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 80%;
-        height: 100vh;
-        background: var(--background-color);
-        padding-top: 60px;
-        transition: 0.3s;
-        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-    }
-
-    nav ul.active {
-        right: 0;
-    }
-
-    nav ul li {
-        display: block;
-        margin: 25px;
-        text-align: center;
-    }
-}
-
-/* Extra small devices */
-@media (max-width: 480px) {
-    .container {
-        padding: 0 15px; /* Reduce container padding on very small screens */
-    }
-
-    nav {
-        padding: 12px 0;
-    }
-
-    .container i {
-        font-size: 1.25rem; /* Slightly smaller icon on very small screens */
-    }
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 /*------------------------------------ Sobre Nosotros section -------------------------------------*/
@@ -289,16 +231,6 @@ nav ul li a:hover::after{
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-
-
-/*------------------------------------ Responsive Section -------------------------------------*/
-
-@media (max-width: 768px) {
-    .about-images-slider {
-        max-width: 100%;
-    }
-}
-
 /*------------------------------------ Productos -------------------------------------*/
 
 #productos{
@@ -354,150 +286,6 @@ nav ul li a:hover::after{
 .producto p{
     font-size: 1rem;
     color: var(--primary-color);
-}
-
-/* Adjust for smaller screens */
-@media (max-width: 768px) {
-    .producto {
-        flex-basis: 100%;
-        max-width: 100%; /* Allow full width on mobile */
-    }
-
-    .producto img {
-        height: 250px; /* Slightly taller images on mobile */
-    }
-}
-
-/* Add hamburger menu for mobile */
-.nav-menu-btn { /* creates a hidden button for the mobile menu. It's initially not displayed and has no background or border */
-    display: none;
-    cursor: pointer;
-    background: none;
-    border: none;
-    padding: 0.5rem;
-}
-
-.nav-menu-btn span { /* This creates the three lines of the hamburger icon. Each `span` is a line, 25px wide, 2px high, with the primary color, and spaced 5px apart. The transition property allows for smooth animations. */
-    display: block;
-    width: 25px;
-    height: 2px;
-    background: var(--primary-color);
-    margin: 5px 0;
-    transition: 0.3s;
-}
-
-/* Update navigation styles */
-nav { /* This allows absolute positioning of child elements relative to the nav */
-    margin-top: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    position: relative;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .container {
-        padding: 10px 5%; /* Reduce padding on mobile */
-    }
-
-    .nav-menu-btn {
-        display: block;
-        z-index: 999;
-    }
-
-    nav ul { /*creates a slide-out menu for mobile. It's initially off-screen (right: -100%), covers 80% of the screen width, and has a smooth transition*/
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 80%;
-        height: 100vh;
-        background: var(--background-color);
-        padding-top: 80px;
-        transition: 0.3s;
-        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-    }
-
-    nav ul.active { /*This class brings the menu on-screen when activated*/
-        right: 0;
-    }
-
-    nav ul li {
-        display: block;
-        margin: 25px;
-    }
-
-    /* Hamburger menu animation */
-    .nav-menu-btn.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);         /*These transform the hamburger icon into an X when the menu is active*/
-    }
-
-    .nav-menu-btn.active span:nth-child(2) {               /*These transform the hamburger icon into an X when the menu is active*/
-        opacity: 0;
-    }
-
-    .nav-menu-btn.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);    /*These transform the hamburger icon into an X when the menu is active*/
-    }
-
-    /* Header text adjustments */
-    .header-text {
-        margin-top: 20%;
-        text-align: center;
-    }
-
-    .header-text h1 {
-        font-size: 40px;
-    }
-
-    .header-text h4 {
-        font-size: 24px;
-    }
-
-    /* Products section adjustments */
-    .productos-list {
-        gap: 30px;
-    }
-
-    .producto {
-        min-width: 280px;
-        padding: 15px;
-    }
-
-    .producto img {
-        height: 300px;
-    }
-
-    /* About section adjustments */
-    .about-content {
-        gap: 30px;
-    }
-
-    .about-text p {
-        font-size: 1rem;
-    }
-
-    #sobre-nosotros h2,
-    #productos .sub-title {
-        font-size: 2rem;
-        margin-bottom: 30px;
-    }
-}
-
-/* Additional breakpoint for very small devices */
-@media (max-width: 480px) {
-    .header-text h1 {
-        font-size: 32px;
-    }
-
-    .header-text h4 {
-        font-size: 20px;
-    }
-
-    .producto {
-        min-width: 100%;
-    }
 }
 
 /*------------------------------------ Bibliografia -------------------------------------*/
@@ -562,24 +350,162 @@ nav { /* This allows absolute positioning of child elements relative to the nav 
     font-size: 14px;
 }
 
-/* Responsive design for Bibliografia section */
+/* Responsive styles */
 @media (max-width: 768px) {
+    .container {
+        padding: 10px 5%;
+    }
+
+    nav {
+        padding: 15px 0;
+    }
+
+    .nav-menu-btn {
+        display: block;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: var(--background-color);
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 80px;
+        transition: right 0.3s ease-in-out;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+    }
+
+    nav ul.active {
+        right: 0;
+    }
+
+    nav ul li {
+        display: block;
+        padding: 10px 20px;
+        font-size: 18px;
+    }
+
+    .nav-menu-btn.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .nav-menu-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-menu-btn.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    nav {
+        position: relative;
+        z-index: 1000;
+    }
+
+    .container {
+        padding: 10px 5%;
+    }
+
+    .header-text {
+        flex-direction: column;
+        text-align: center;
+        margin-top: 20%;
+    }
+
+    .header-text h1 {
+        font-size: 40px;
+    }
+
+    .header-text h4 {
+        font-size: 24px;
+    }
+
+    .about-content,
+    .productos-list,
+    .libros-lista {
+        gap: 30px;
+    }
+
+    .about-text p,
+    .producto p {
+        font-size: 1rem;
+    }
+
+    #sobre-nosotros h2,
+    #productos .sub-title,
+    #bibliografia .sub-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .producto {
+        flex-basis: 100%;
+        max-width: 100%;
+        min-width: 280px;
+        padding: 15px;
+    }
+
+    .producto img {
+        height: 300px;
+    }
+
     .libro {
         flex-direction: column;
         padding: 15px;
     }
 
-    .libro-imagen {
-        margin-right: 0;
-        margin-bottom: 20px;
-        flex: none;
-    }
-
-    .libro-imagen img {
+    .libro img {
+        width: 100%;
         height: 200px;
     }
+}
 
-    .bibliografia .sub-title {
-        font-size: 2rem;
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    nav {
+        padding: 12px 0;
+    }
+
+    nav ul {
+        width: 100%; /* Full width menu on very small devices */
+        padding-top: 60px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+
+    .nav-menu-btn span {
+        width: 22px; /* Slightly smaller hamburger lines */
+        height: 2px;
+        margin: 4px 0;
+    }
+
+    .nav-menu-btn {
+        padding: 8px; 
+    }
+
+    .container i {
+        font-size: 1.25rem;
+    }
+
+    .header-text h1 {
+        font-size: 32px;
+    }
+
+    .header-text h4 {
+        font-size: 20px;
+    }
+
+    .producto {
+        min-width: 100%;
     }
 }
