@@ -24,7 +24,7 @@ body {
 
 .container {
     padding: 10px 5%;
-    max-width: 1200px;
+    max-width: 1600px;
     margin: 0 auto;
 }
 
@@ -90,7 +90,6 @@ nav ul li a:hover {
     transition: 0.3s;
 }
 
-/* Header Text and Image */
 .header-text {
     display: flex;
     align-items: center;
@@ -104,12 +103,16 @@ nav ul li a:hover {
 }
 
 .header-text h1 {
-    font-size: 3rem;
+    font-size: 4rem;
     margin-bottom: 10px;
     color: var(--third-color);
 }
 
 .header-text h4 {
+    font-size: 2rem;
+}
+
+.header-text p{
     font-size: 1.5rem;
 }
 
@@ -125,7 +128,7 @@ nav ul li a:hover {
     height: auto;
 }
 
-/* Sobre Nosotros Section */
+/*---------------------------------------- Sobre Nosotros Section  ----------------------------------------*/
 #sobre-nosotros {
     padding: 80px 0;
 }
@@ -201,7 +204,7 @@ nav ul li a:hover {
     object-fit: cover;
 }
 
-/* Productos Section */
+/* ------------------------------------ Productos Section  ---------------------------------*/
 #productos {
     padding: 80px 0;
 }
@@ -235,7 +238,7 @@ nav ul li a:hover {
 
 .producto .img-container {
     width: 100%;
-    padding-top: 75%; /* 4:3 aspect ratio */
+    height: 400px;
     position: relative;
     border-radius: 10px;
     overflow: hidden;
@@ -257,7 +260,7 @@ nav ul li a:hover {
     color: var(--secondary-color);
 }
 
-/* Bibliografia Section */
+/* -----------------------------Bibliografia Section --------------------------------------- */
 #bibliografia {
     padding: 80px 0;
 }
@@ -313,7 +316,7 @@ nav ul li a:hover {
     margin-bottom: 10px;
 }
 
-/* Contacto Section */
+/* -----------------------------Contacto Section -------------------------------------*/
 #contacto {
     padding: 80px 0;
     background-color: #fff8dc;
@@ -500,6 +503,24 @@ nav ul li a:hover {
     .contacto-wrapper {
         grid-template-columns: 1fr;
     }
+
+    .productos-list {
+        gap: 20px;
+    }
+
+    .producto {
+        flex: 0 1 100%;
+        max-width: none;
+    }
+
+    .producto .img-container {
+        padding-top: 100%;
+    }
+
+    .producto img {
+        object-fit: contain;
+        padding: 10px; 
+    }
 }
 
 @media (max-width: 480px) {
@@ -532,5 +553,17 @@ nav ul li a:hover {
 
     .contact-form {
         padding: 20px;
+    }
+
+    #productos {
+        padding: 40px 0;
+    }
+
+    .producto {
+        padding: 15px;
+    }
+
+    .producto .img-container {
+        padding-top: 75%;
     }
 }
